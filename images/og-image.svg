@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Central Connecticut Coatings — high-performance coatings, engineered in East Hartford">
+  <rect width="1200" height="630" fill="#1A1A1A"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#BA0D20"/>
+
+  <text x="80" y="150" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="6" fill="#BA0D20">CENTRAL CONNECTICUT COATINGS</text>
+  <rect x="80" y="176" width="120" height="5" fill="#BA0D20"/>
+
+  <text x="80" y="300" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" fill="#F2F1F0">High-Performance Coatings,</text>
+  <text x="80" y="382" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" fill="#F2F1F0">Engineered in East Hartford</text>
+
+  <text x="80" y="452" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="26" fill="#B8B6B2">Ceramic · Powder · Thermal Barrier · Dry Film Lubricants · Sandblasting</text>
+
+  <rect x="80" y="510" width="2" height="60" fill="#BA0D20"/>
+  <text x="104" y="536" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#F2F1F0">860-528-8281</text>
+  <text x="104" y="566" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="22" fill="#8F8D8A">52 Village Street, East Hartford, CT 06108</text>
+</svg>
