@@ -73,6 +73,8 @@ a:hover{ color:var(--ccc-red-dark); }
 .band{ padding:var(--ccc-section-y) 0; }
 .band--white{ background:var(--ccc-surface); }
 .band--shell{ background:var(--ccc-shell); }
+/* two white bands meet after the gallery is inserted — keep a hairline divide */
+.band--white + .band--white{ border-top:1px solid var(--ccc-hairline); }
 .band--dark{
   background:var(--ccc-dark);
   color:var(--ccc-on-dark);
@@ -189,10 +191,18 @@ a:focus-visible,button:focus-visible{
   padding-bottom:10px;
 }
 .wordmark{
-  display:inline-block;
+  display:inline-flex;
+  flex-direction:column;
   text-decoration:none;
   color:var(--ccc-ink);
   line-height:1.1;
+}
+.wordmark__logo{
+  display:block;
+  width:auto;
+  height:30px;
+  max-width:100%;
+  margin-bottom:7px;
 }
 .wordmark__name{
   display:block;
@@ -367,6 +377,51 @@ a:focus-visible,button:focus-visible{
   content:"·";
   padding:0 10px;
   color:var(--ccc-meta);
+}
+
+/* ---------------------------------------------------------------- gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--ccc-hairline-2);
+  border:1px solid var(--ccc-hairline-2);
+  border-radius:var(--ccc-radius);
+  overflow:hidden;
+}
+.gallery__item{
+  background:var(--ccc-surface);
+  padding:0;
+}
+.gallery__item figure{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.gallery__item img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  background:var(--ccc-shell);
+  display:block;
+}
+.gallery__item figcaption{
+  padding:18px 20px 22px;
+  font-size:15px;
+  line-height:1.4;
+  font-weight:700;
+  color:var(--ccc-ink);
+  border-top:3px solid transparent;
+  transition:border-color .12s ease;
+}
+.gallery__item:hover figcaption{ border-top-color:var(--ccc-red); }
+.gallery__item figcaption span{
+  display:block;
+  margin-top:5px;
+  font-size:13px;
+  line-height:1.45;
+  font-weight:400;
+  color:var(--ccc-muted);
 }
 
 /* ------------------------------------------------------------------- about */
@@ -624,6 +679,7 @@ a:focus-visible,button:focus-visible{
 @media (max-width:1024px){
   .hero__h1{ font-size:52px; }
   .services{ grid-template-columns:repeat(3,1fr); }
+  .gallery{ grid-template-columns:repeat(2,1fr); }
   .about__grid{ grid-template-columns:1fr; gap:40px; }
   .monogram{ max-width:280px; }
   .band{ padding:72px 0; }
@@ -667,6 +723,14 @@ a:focus-visible,button:focus-visible{
 
   .services{ grid-template-columns:1fr; }
   .service{ padding:26px 22px 28px; }
+
+  .gallery{ grid-template-columns:1fr; }
+  .gallery__item img{ height:220px; }
+
+  .topbar__inner{ min-height:56px; }
+  .wordmark__logo{ height:26px; }
+  .wordmark__name{ font-size:13px; }
+  .wordmark__rule{ margin-top:5px; }
 
   .quotes{ grid-template-columns:1fr; }
   .quote{ padding:26px 22px; }
