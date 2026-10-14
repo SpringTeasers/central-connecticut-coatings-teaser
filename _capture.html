@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Full-page capture — Central Connecticut Coatings teaser</title>
+<style>
+  html,body{margin:0;padding:0;background:#ffffff;}
+  #frame{display:block;width:1440px;height:1px;border:0;}
+</style>
+</head>
+<body>
+<iframe id="frame" src="../index.html" title="Central Connecticut Coatings teaser"></iframe>
+<script>
+(function(){
+  var f = document.getElementById('frame');
+
+  function grow(){
+    try{
+      var d = f.contentDocument || f.contentWindow.document;
+      if(!d){ return; }
+      var h = function(){
+        var b = d.body || {}, e = d.documentElement || {};
+        return Math.max(
+          b.scrollHeight||0, b.offsetHeight||0,
+          e.scrollHeight||0, e.offsetHeight||0,
+          e.clientHeight||0
+        );
+      };
+      var apply = function(n){
+        n = Math.max(n||0, 1200);
+        f.style.height = n + 'px';
+        document.title = 'READY h=' + n;
+      };
+      apply(h());
+      setTimeout(function(){ apply(h()); }, 600);
+      setTimeout(function(){ apply(h()); }, 2000);
+      if (window.ResizeObserver) {
+        try{ new ResizeObserver(function(){ apply(h()); }).observe(d.documentElement); }catch(e){}
+      }
+      var imgs = d.images || [];
+      for (var i=0;i<imgs.length;i++){
+        if(!imgs[i].complete){ imgs[i].addEventListener('load', function(){ apply(h()); }); }
+      }
+      setInterval(function(){ apply(h()); }, 1500);
+    }catch(err){ document.title = 'ERR ' + err.message; }
+  }
+
+  f.addEventListener('load', grow);
+  setTimeout(grow, 300);
+})();
+</script>
+</body>
+</html>
